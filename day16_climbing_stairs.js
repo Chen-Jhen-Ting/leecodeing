@@ -2,7 +2,6 @@ input1 = 2
 output1 = 2
 // 1. 1 step + 1 step
 // 2. 2 steps
-
 input2 =  3
 output2 = 3
 // 1. 1 step + 1 step + 1 step
@@ -16,19 +15,24 @@ function climbing(num){
             a[i] = 1
         }else{
             a[i] = a[i-1] +a[i-2]
-        }
-        
+        }   
     }
     return a[num]
+}
+
+function climb(num,a=0,b=1){
+    if(num === 0){ return b }
+    console.log(b)
+    climb(num -= 1, b, a+b)
 }
 
 function expect(a,b){
     console.log(a == b)
 }
 
-
-expect(climbing(input1),output1)
-expect(climbing(input2),output2)
+console.log(climb(input1))
+// expect(climbing(input1),output1)
+// expect(climbing(input2),output2)
 
 // 1 , 2 , 3 , 4 , 5   6
 
