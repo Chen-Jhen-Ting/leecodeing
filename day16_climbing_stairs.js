@@ -21,16 +21,21 @@ function climbing(num){
 }
 
 function climb(num,a=0,b=1){
-    if(num === 0){ return b }
-    console.log(b)
-    climb(num -= 1, b, a+b)
-}
+    if(num === 0){
+        // console.log(num)
+        console.log(b) 
+        return b 
+    }
+    // console.log(b)
+    return climb(num -= 1, b, a+b)
+} 
 
 function expect(a,b){
     console.log(a == b)
 }
 
 console.log(climb(input1))
+// expect(climb(input1),output1)
 // expect(climbing(input1),output1)
 // expect(climbing(input2),output2)
 
