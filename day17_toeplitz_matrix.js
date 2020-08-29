@@ -4,25 +4,18 @@ matrix1 = [
   [9,5,1,2]
 ]
 output1= true
-// Explanation: 
-// In the above grid, the diagonals are:
-// "[9]", "[5, 5]", "[1, 1, 1]", "[2, 2, 2]", "[3, 3]", "[4]".
-// In each diagonal all elements are the same, so the answer is True.
 matrix2 = [
   [1,2],
   [2,2]
 ]
 output2 = false
-// Explanation:
-// The diagonal "[1, 2]" has different elements.
-
 function diagonal(ary){
-  length = ary[0].length
-  ary = ary.reduce( (x,y) => { return x.concat(y) } )
   for(let i=0; i< ary.length; i++){
-    if(ary[i+length] == true && ary[i] == ary[i+length]){
-      if(ary[i] != ary[i+length]){
-        return false
+    for(let j=0; j < ary[0].length; j++){
+      if(ary[i+1] && ary[i+1][j+1]){
+        if(ary[i][j] !== ary[i+1][j+1]){
+          return false
+        }
       }
     }
   }
@@ -35,3 +28,5 @@ function expect(a,b){
 
 expect(diagonal(matrix1),output1)
 expect(diagonal(matrix2),output2)
+// console.log(diagonal(matrix1))
+// console.log(diagonal(matrix2))
