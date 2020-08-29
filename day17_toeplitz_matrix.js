@@ -3,7 +3,7 @@ matrix1 = [
   [5,1,2,3],
   [9,5,1,2]
 ]
-output1= True
+output1= true
 // Explanation: 
 // In the above grid, the diagonals are:
 // "[9]", "[5, 5]", "[1, 1, 1]", "[2, 2, 2]", "[3, 3]", "[4]".
@@ -12,12 +12,21 @@ matrix2 = [
   [1,2],
   [2,2]
 ]
-output2 = False
+output2 = false
 // Explanation:
 // The diagonal "[1, 2]" has different elements.
 
 function diagonal(ary){
-
+  length = ary[0].length
+  ary = ary.reduce( (x,y) => { return x.concat(y) } )
+  for(let i=0; i< ary.length; i++){
+    if(ary[i+length] == true && ary[i] == ary[i+length]){
+      if(ary[i] != ary[i+length]){
+        return false
+      }
+    }
+  }
+  return true
 }
 
 function expect(a,b){
