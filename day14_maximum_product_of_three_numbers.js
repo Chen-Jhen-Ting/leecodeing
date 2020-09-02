@@ -5,6 +5,7 @@ input2 = [1,2,3,4]
 output2 = 24
 
 function maxProduct(ary){
+    ary = ary.map(x => Math.abs(x))
     sortAry = ary.sort((x,y)=>{return x-y})
 
     a = sortAry.pop()

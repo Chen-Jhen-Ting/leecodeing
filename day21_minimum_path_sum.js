@@ -1,3 +1,5 @@
+const { cachedDataVersionTag } = require("v8")
+
 input=[ [1,3,1],
         [1,5,1],
         [4,2,1]]
@@ -10,7 +12,7 @@ function minimumPath(ary){
     let y = ary[0].length-1
     // console.log(y)
     let total = ary[x][y]
-    while(x >= 1 || y >= 1 ){
+    while(x != 1 || y != 1 ){
         if(x-1 < 0){ x = 1} //保證不會選到矩陣以外的東西
         if(y-1 < 0){ y = 1}
         if(ary[x-1][y] < ary[x][y-1]){
@@ -29,3 +31,11 @@ function expect(a,b){
     console.log(a==b)
 }
 expect(minimumPath(input),output)
+
+
+{
+catagory: JS,
+description: 排序,
+code: sort
+
+}
