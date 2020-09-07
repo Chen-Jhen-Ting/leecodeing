@@ -20,18 +20,24 @@ output2=[
 function rotation(ary){
   y = ary.length 
   x = ary[0].length 
-  result = [ [], [], [] ]
+  // result = new Array(y).fill([]) 
+  // fill() 填入的東西必須是靜態的值 ex 1 ,2 ,3 ,true "hi"
+  // 如果填入 [ ] 
+  result=[]
+  console.log(result)
+  for(let k = 0 ; k < y ; k++){
+    result.push([])
+  }
   for(let i = 0 ; i < y ; i++ ){
     for(let j = 0; j < x ; j++){
-      console.log(ary[j][i])
       result[j].unshift(ary[i][j])
     }
   }
-  // console.log(result)
+  console.log(result)
   return result
 }
 function expect(a,b){
     console.log(JSON.stringify(a)==JSON.stringify(b))
 }
 expect(rotation(input1),output1)
-// expect(rotation(input2),output2)
+expect(rotation(input2),output2)
