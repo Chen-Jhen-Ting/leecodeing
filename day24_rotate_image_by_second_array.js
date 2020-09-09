@@ -20,9 +20,6 @@ output2=[
 function rotation(ary){
   y = ary.length 
   x = ary[0].length 
-  // result = new Array(y).fill([]) 
-  // fill() 填入的東西必須是靜態的值 ex 1 ,2 ,3 ,true "hi"
-  // 如果填入 [ ] 
   result=[]
   console.log(result)
   for(let k = 0 ; k < y ; k++){

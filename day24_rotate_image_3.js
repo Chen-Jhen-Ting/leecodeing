@@ -23,15 +23,12 @@ function rotation(ary){
   let max_turn = ary.length-1
   
   while( start <  end){
-
-
     temp = ary[start][start+turn] 
     ary[start][start+turn] = ary[end-turn][start]   //[2][0] -> [0][0] 01
     ary[end-turn][start] = ary[end][end-turn]       //[2][2] -> [2][0] 12
     ary[end][end-turn] = ary[start+turn][end]       //[0][2] -> [2][2] 21
     ary[start+turn][end] = temp                     //[0][0] -> [0][2] 10
     
-    // console.log(1)
     turn +=1
     if( turn == max_turn){
       start += 1
@@ -48,5 +45,3 @@ function expect(a,b){
 }
 expect(rotation(input1),output1)
 expect(rotation(input2),output2)
-
-// rotation(input1)
