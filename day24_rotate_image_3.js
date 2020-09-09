@@ -27,7 +27,7 @@ function rotation(ary){
 
     temp = ary[start][start+turn] 
     ary[start][start+turn] = ary[end-turn][start]   //[2][0] -> [0][0] 01
-    ary[end-turn][start] = ary[end][end-turn] //[2][2] -> [2][0] 12
+    ary[end-turn][start] = ary[end][end-turn]       //[2][2] -> [2][0] 12
     ary[end][end-turn] = ary[start+turn][end]       //[0][2] -> [2][2] 21
     ary[start+turn][end] = temp                     //[0][0] -> [0][2] 10
     
