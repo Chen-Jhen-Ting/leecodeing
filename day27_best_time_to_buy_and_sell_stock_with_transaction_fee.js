@@ -11,6 +11,23 @@ output= 8
 
 function sellStock(ary,fee){
   let profit = 0
+  let keep = 0
+  for(let i = 0; i < ary.length; i++){
+    if(keep == 0 ){
+      if(ary[i] < ary[i+1]){
+        keep = ary[i]
+        console.log(ary[i])
+      }
+    }
+    if(ary[i] > keep + fee){
+      profit +=  ary[i] - keep - fee
+      keep = 0
+    }
+    console.log(i)
+    console.log(`keep:${keep}`)
+    console.log(`profit:${profit}`)
+  }
+  return profit
 }
 
 function expect( a , b ){
