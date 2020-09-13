@@ -18,6 +18,8 @@ function sellStock(ary,fee){
         keep = ary[i]
         console.log(ary[i])
       }
+    }else if(ary[i]< keep){ // 如果購買股票後出現更低價
+      keep = ary[i]
     }
     if(ary[i] > keep + fee){
       profit +=  ary[i] - keep - fee
