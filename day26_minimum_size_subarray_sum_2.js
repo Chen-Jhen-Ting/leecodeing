@@ -21,9 +21,9 @@ function minimumSize( s, ary ){
     }else{
       
       if( ary[start+1] < ary[end-1] ){
-        start +=1
+        start += 1
       }else{
-        end -=1
+        end -= 1
       }
 
     }
