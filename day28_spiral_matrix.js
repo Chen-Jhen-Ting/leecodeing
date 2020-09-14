@@ -21,29 +21,32 @@ function sprial(ary){
   while(result.length != ary.length * ary[0].length ){
     el = ary[y][x]
     result.push(el)
+    // console.log(`move ${move}`)
+    // console.log(`y: ${y}`)
+    // console.log(`x: ${x}`)
     if(move === 'right'){
-      if(ary[y][x+1] != undefined ){
+      if(ary[y][x+1] != undefined && result.indexOf(ary[y][x+1]) == -1){
         x += 1
       }else{
         move = 'down'
         y += 1
       }
     }else if(move == 'down'){
-      if(ary[y+1] != undefined ){
+      if(ary[y+1] != undefined && result.indexOf(ary[y+1][x]) == -1){
         y += 1
       }else{
         move = 'left'
         x -= 1
       }
     }else if(move =='left'){
-      if(ary[y][x-1] !=undefined ){
+      if(ary[y][x-1] !=undefined && result.indexOf(ary[y][x-1]) == -1){
         x -= 1
       }else{
         move ='top'
         y -= 1
       }
     }else if( move == 'top'){
-      if(ary[y-1] != undefined && ary[y-1][x] in result == false){
+      if(ary[y-1] != undefined && result.indexOf(ary[y-1][x]) == -1){
         y -= 1
       }else{
         move = 'right'
@@ -51,10 +54,10 @@ function sprial(ary){
       }
     }
   }
-
-  console.log(`y: ${y}`)
-  console.log(`x: ${x}`)
-  console.log(result)
+  // console.log(`move: ${move}`)
+  // console.log(`y: ${y}`)
+  // console.log(`x: ${x}`)
+  // console.log(result)
   return result
 }
 function expect(a,b){
